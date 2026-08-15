@@ -37,6 +37,7 @@ def main():
     parser.add_argument('--input_dir', type=str, required=True, help='Directory containing degraded .npy files')
     parser.add_argument('--output_dir', type=str, required=True, help='Directory to save restored .npy files')
     parser.add_argument('--model_path', type=str, required=True, help='Path to trained model weights (.pth)')
+    parser.add_argument('--num_images', type=int, default=None, help='Number of images to process (for quick testing)')
     args = parser.parse_args()
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -49,6 +50,8 @@ def main():
     # Get list of .npy files
     files = [f for f in os.listdir(args.input_dir) if f.endswith('.npy')]
     files.sort()
+    if args.num_images is not None:
+        files = files[:args.num_images]
     print(f'Found {len(files)} images to process.')
     
     times = []
