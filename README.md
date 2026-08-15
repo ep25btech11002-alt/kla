@@ -36,7 +36,7 @@ To train the model, run:
 `
 python train.py
 `
-This will train the model using the training and validation splits in the data directory. The best model will be saved to checkpoints/best_model.pth.
+This will train the model using the training and validation splits in the data directory. The best model will be saved to best_model.pth.
 
 ## Evaluation
 To run inference on a test set (or any directory of degraded images), use the provided evaluation script:
@@ -49,7 +49,7 @@ The script will load the model, process all .npy files in the input directory, a
 The model is a U-Net with residual blocks and transposed convolutions for upsampling. It takes a single-channel degraded image and outputs a single-channel restored image at twice the resolution (since the degradation is 2x downsampling in the provided dataset).
 
 ## Results
-After training, the model achieves a loss of approximately 0.07 on the validation set (after a few epochs). For full results, train for more epochs.
+After training, the model achieves a loss of approximately 0.07 on the validation set (after a few epochs). 
 
 ## Notes
 - The evaluation script is standalone and does not require any manual edits.
