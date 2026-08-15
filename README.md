@@ -19,6 +19,8 @@ data/
     degraded/       # validation degraded .npy files
 `
 
+NOTE : The dataset originally given, was split into train (for training) and val (for validation). These folders have also been attached so that the model can train using the correct path. 
+
 ## Installation
 1. Clone this repository.
 2. Create a virtual environment (optional but recommended):
