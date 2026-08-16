@@ -52,7 +52,7 @@ The script will load the model, process all .npy files in the input directory, a
 The model is a U-Net with residual blocks and transposed convolutions for upsampling. It takes a single-channel degraded image and outputs a single-channel restored image at twice the resolution (since the degradation is 2x downsampling in the provided dataset).
 
 ## Results
-After training, the model achieves a loss of approximately 0.07 on the validation set (after a few epochs). 
+After training, the model achieves a loss of approximately 0.07 on the validation set . The model finished processing all 400 test degraded images given (test dataset), and it run with an average inference time per image of only 0.114 seconds, and completed the whole infer process in a total time of 45.778 seconds for a total of 400 frames. The model used only CPU (AMD Ryzen 7-7435HS).
 
 ## License
 This project is for the KLA Semicon 2.0 hackathon.
